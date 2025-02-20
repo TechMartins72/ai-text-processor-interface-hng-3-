@@ -20,6 +20,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          http-equiv="Origin_Trial"
+          content="NEXT_PUBLIC_CHROME_AI_API_TOKEN"
+        />
+        <meta
+          http-equiv="Origin_Trial"
+          content="NEXT_PUBLIC_CHROME_AI_API_TOKEN_2"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

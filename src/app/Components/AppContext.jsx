@@ -25,8 +25,9 @@ const AppContextProvider = (props) => {
     const supportTranslator =
       "ai" in self && "translator" in self.ai ? "allowed" : "not_allowed";
     if (supportTranslator === "not_allowed") {
-      setErrorMessage("Translator is not supported in this browser");
-      setNotSupported(true);
+      console.log("not-allowed");
+      // setErrorMessage("Translator is not supported in this browser");
+      // setNotSupported(true);
     }
   }, []);
 
