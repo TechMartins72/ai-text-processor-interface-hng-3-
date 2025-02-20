@@ -21,8 +21,7 @@ const ChatArea = () => {
       <section className="w-full h-full flex flex-col gap-8 overflow-y-scroll pb-8 no-scrollbar">
         {inputsArray.map((interaction, index) => {
           return (
-            <div key={index}
-            className="flex flex-col gap-8">
+            <div key={index} className="flex flex-col gap-8">
               <UserInput
                 input={interaction._userinput._input}
                 language={interaction._userinput._inputlanguage}
@@ -46,10 +45,10 @@ const ChatArea = () => {
           </>
         ) : (
           <div className="w-full h-full flex flex-col justify-center items-center text-center gap-3">
-            <h2 className="lg:text-5xl md:text-3xl text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-gray-600">
+            <h2 className="lg:text-5xl p-4 md:text-3xl text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-gray-600">
               Translate, Detect <br /> Language & Summarize
             </h2>
-            <p>with Gemini Nano</p>
+            <p className="md:text-xl">with Gemini Nano</p>
           </div>
         )}
       </section>

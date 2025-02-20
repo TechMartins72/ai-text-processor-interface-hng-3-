@@ -9,6 +9,9 @@ const MainArea = () => {
         <ChatArea />
       </div>
       <TextArea />
+      <small className="mt-2 text-gray-500">
+        Please provide longer text to optimize result
+      </small>
     </section>
   );
 };

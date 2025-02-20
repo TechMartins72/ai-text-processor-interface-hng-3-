@@ -25,11 +25,18 @@ const AppContextProvider = (props) => {
     const supportTranslator =
       "ai" in self && "translator" in self.ai ? "allowed" : "not_allowed";
     if (supportTranslator === "not_allowed") {
-      console.log("not-allowed");
-      // setErrorMessage("Translator is not supported in this browser");
-      // setNotSupported(true);
+      setErrorMessage("Chrome's AI API is not configured in this browser");
+      setNotSupported(true);
     }
   }, []);
+
+  const handleSummarizer = () => {
+    setErrorMessage("Sorry! Summarizer is not integrated on this App 😢");
+    setError(true);
+    setTimeout(() => {
+      setError(false);
+    }, 2000);
+  };
 
   const languages = [
     {
@@ -215,6 +222,7 @@ const AppContextProvider = (props) => {
         responseLanguage,
         notSupported,
         setNotSupported,
+        handleSummarizer,
       }}
     >
       {props.children}

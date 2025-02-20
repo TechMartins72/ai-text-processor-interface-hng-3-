@@ -4,7 +4,8 @@ import React, { useContext } from "react";
 import { AppContext } from "./AppContext";
 
 const TranslateMenu = () => {
-  const { handleTranslate, language, isLong, findBCP } = useContext(AppContext);
+  const { handleTranslate, language, isLong, findBCP, handleSummarizer } =
+    useContext(AppContext);
 
   return (
     <div className="flex flex-wrap items-center justify-end gap-4">
@@ -48,7 +49,11 @@ const TranslateMenu = () => {
         Translate{" "}
       </button>
       {(language == "English") & isLong ? (
-        <button aria-label="Summarize" className="bg-white text-black button">
+        <button
+          aria-label="Summarize"
+          onClick={handleSummarizer}
+          className="bg-white text-black button"
+        >
           Summarize
         </button>
       ) : (
