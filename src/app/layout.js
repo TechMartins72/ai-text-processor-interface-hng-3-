@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AppContextProvider from "./Components/AppContext";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,16 +21,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
+      <Head>
         <meta
-          http-equiv="Origin_Trial"
-          content="NEXT_PUBLIC_CHROME_AI_API_TOKEN"
+          http-equiv="Origin-Trial"
+          content={process.env.NEXT_PUBLIC_CHROME_AI_API_TOKEN}
         />
         <meta
-          http-equiv="Origin_Trial"
-          content="NEXT_PUBLIC_CHROME_AI_API_TOKEN_2"
+          http-equiv="Origin-Trial"
+          content={process.env.NEXT_PUBLIC_CHROME_AI_API_TOKEN_2}
         />
-      </head>
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
