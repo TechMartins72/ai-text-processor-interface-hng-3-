@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext } from "react";
-// import { IoSend } from "react-icons/io5";
+import { IoSend } from "react-icons/io5";
 import { AppContext } from "./AppContext";
 
 const TextArea = () => {
@@ -27,8 +27,7 @@ const TextArea = () => {
           type="submit"
           className="min-h-12 w-12 rounded-lg text-2xl text-white flex justify-center items-center hover:bg-white hover:text-black transition-all ease-in-out duration-300"
         >
-          {/* <IoSend /> */}
-          send{" "}
+          <IoSend />
         </button>
       </form>
     </>

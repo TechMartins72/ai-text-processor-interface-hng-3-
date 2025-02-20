@@ -73,14 +73,23 @@ const AppContextProvider = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (currentInput !== undefined) {
       saveInputs();
     }
-    setCurrentInput(input);
-    setLoadingLanguage(true);
-    setShowResponse(false);
-    checkInputLength();
-    detectLanguage();
+    if (input !== "") {
+      setCurrentInput(input);
+      setLoadingLanguage(true);
+      setShowResponse(false);
+      checkInputLength();
+      detectLanguage();
+    } else {
+      setErrorMessage("Textarea can't be empty!");
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
+    }
   };
 
   const checkInputLength = () => {

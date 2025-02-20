@@ -18,7 +18,7 @@ const ChatArea = () => {
   {
     currentInput !== undefined;
     return (
-      <section className="w-full h-full flex flex-col gap-6 overflow-y-hidden">
+      <section className="w-full h-full flex flex-col gap-6 overflow-y-scroll ">
         {inputsArray.map((interaction, index) => {
           return (
             <div key={index} className="flex flex-col gap-4">
