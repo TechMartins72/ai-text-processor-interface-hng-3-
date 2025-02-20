@@ -69,6 +69,7 @@ const AppContextProvider = (props) => {
       },
     });
     console.log(inputsArray);
+    console.log(response);
   };
 
   const handleSubmit = async (e) => {
@@ -77,6 +78,9 @@ const AppContextProvider = (props) => {
     if (currentInput !== undefined) {
       saveInputs();
     }
+    setResponse("");
+    setResponseLanguage("");
+
     if (input !== "") {
       setCurrentInput(input);
       setLoadingLanguage(true);
