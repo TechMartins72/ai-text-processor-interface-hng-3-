@@ -20,6 +20,7 @@ const AppContextProvider = (props) => {
   const [error, setError] = React.useState(false);
   const [errorMessage, setErrorMessage] = React.useState("");
   const [notSupported, setNotSupported] = React.useState(false);
+  const [containerRef, setContainerRef] = React.useState();
 
   useEffect(() => {
     const supportTranslator =
@@ -160,6 +161,10 @@ const AppContextProvider = (props) => {
     const result = await translator.translate(currentInput);
     setResponse(result);
     setLoadingResponse(false);
+    scroll();
+  };
+  const scroll = () => {
+    containerRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const detectLanguage = async () => {
@@ -223,6 +228,8 @@ const AppContextProvider = (props) => {
         notSupported,
         setNotSupported,
         handleSummarizer,
+        containerRef,
+        setContainerRef,
       }}
     >
       {props.children}

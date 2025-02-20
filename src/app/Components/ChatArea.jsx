@@ -1,11 +1,12 @@
 "use client";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import Response from "./Response";
 import UserInput from "./UserInput";
 import TranslateMenu from "./TranslateMenu";
 import { AppContext } from "./AppContext";
 
 const ChatArea = () => {
+  const container = useRef();
   const {
     currentInput,
     showResponse,
@@ -13,12 +14,20 @@ const ChatArea = () => {
     response,
     inputsArray,
     responseLanguage,
+    setContainerRef,
   } = useContext(AppContext);
+
+  useEffect(() => {
+    setContainerRef(container);
+  }, []);
 
   {
     currentInput !== undefined;
     return (
-      <section className="w-full h-full flex flex-col gap-8 overflow-y-scroll pb-8 no-scrollbar">
+      <section
+        ref={container}
+        className="w-full h-full flex flex-col gap-8 overflow-y-scroll pb-8 no-scrollbar"
+      >
         {inputsArray.map((interaction, index) => {
           return (
             <div key={index} className="flex flex-col gap-8">
